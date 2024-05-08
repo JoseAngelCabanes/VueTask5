@@ -1,9 +1,17 @@
-const app = Vue.createapp({
+const app = Vue.createApp({
     data() {
         return {
             tasks: [],
             enteredTaskValue: "",
             taskIsVisible: true
+        }
+    },
+    computed: {
+        taskClasses() {
+            return {
+                visible: this.taskIsVisible,
+                hidden: !this.taskIsVisible
+            }
         }
     },
     methods: {
