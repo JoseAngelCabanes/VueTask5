@@ -26,8 +26,8 @@
         No tasks have been added yet - please start adding some!
       </p>
       <ul v-else>
-        <li v-for="(task, index) in tasks" :key="task" @click="">
-          <p>{{ task }}</p>
+        <li v-for="(task) in tasks" :key="task">
+          <p :class="taskClasses">{{ task }}</p>
         </li>
         <!-- 2) Output the list of tasks here -->
       </ul>
