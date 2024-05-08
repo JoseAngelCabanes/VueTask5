@@ -3,7 +3,8 @@ const app = Vue.createApp({
         return {
             tasks: [],
             enteredTaskValue: "",
-            taskIsVisible: true
+            taskIsVisible: true,
+            isToogled: false
         }
     },
     computed: {
@@ -12,16 +13,27 @@ const app = Vue.createApp({
                 visible: this.taskIsVisible,
                 hidden: !this.taskIsVisible
             }
+        },
+        buttonText() {
+            return this.isToogled ? 'Show!' : 'Hide!';
         }
     },
     methods: {
         addTask () {
             this.tasks.push(this.enteredTaskValue);
         },
-         toogleTaskVisibility() {
-             this.taskIsVisible = !this.taskIsVisible
-         },
-    }
+        handleToogleButton() {
+            this.toogleTaskVisibility();
+            this.toogleState();
+        },
+            toogleTaskVisibility() {
+                this.taskIsVisible = !this.taskIsVisible
+            },
+            toogleState() {
+                this.isToogled = !this.isToogled;
+            }
+        },
+    
 });
 
 app.mount('#assignment');
