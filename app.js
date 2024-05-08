@@ -20,7 +20,7 @@ const app = Vue.createApp({
         },
          toogleTaskVisibility() {
              this.taskIsVisible = !this.taskIsVisible
-         }
+         },
     }
 });
 
