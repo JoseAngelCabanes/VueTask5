@@ -22,6 +22,9 @@
       <!-- When clicking "Add Task" a new task with the entered text should be added -->
       <input type="text" v-model="enteredTaskValue">
       <button @click="addTask">Add Task</button>
+      <p v-if="tasks.legnth === 0">
+        No tasks have been added yet - please start adding some!
+      </p>
       <ul>
         <!-- 2) Output the list of tasks here -->
       </ul>
